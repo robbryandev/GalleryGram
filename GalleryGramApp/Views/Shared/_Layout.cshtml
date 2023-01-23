@@ -7,6 +7,9 @@
   <title>GalleryGram</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <link rel="stylesheet" href="~/css/styles.css">
 </head>
 
@@ -14,6 +17,21 @@
   <div class="container">
     @RenderBody()
   </div>
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+      <ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Feedback</a></li>
+</ul>
+</div>
+<div class="content">
+      <div class="title">
+</div>
 </body>
 
 </html>

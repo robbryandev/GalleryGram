@@ -1,9 +1,14 @@
 @{
   Layout = "_Layout";
 }
+ <body class="reglog">
+  
 
-<h2>Authentication with Identity</h2>
+<br>
+
+<h1>Register Or Login</h1>
 <hr />
+<hr>
 @if (User.Identity.IsAuthenticated)
 {
   <p>Hello @User.Identity.Name!</p>
@@ -15,7 +20,26 @@
 }
 else
 {
-  <p>@Html.ActionLink("Register", "Register")</p>
-  <p>@Html.ActionLink("Log in", "Login")</p>
-}
+  <div class="svg-wrapper">
+  <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" width="150" />
+    <div id="text">
+      @* <a href=""><span class="spot"></span>Button 1</a> *@
+      <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Register", "Register") </p>
 
+    </div>
+  </svg>
+</div>
+  <div class="svg-wrapper">
+  <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" width="150" />
+    <div id="text">
+      @* <a href=""><span class="spot"></span>Button 1</a> *@
+      <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Log in", "Login")
+
+      </p>
+    </div>
+  </svg>
+</div>
+}
+ </body> 
