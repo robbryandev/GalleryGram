@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using GalleryGram.Models;
+using System.Security.Claims;
 
 namespace GalleryGram.Controllers
 {
@@ -7,10 +9,12 @@ namespace GalleryGram.Controllers
   {
     private readonly GalleryGramContext _db;
     private IWebHostEnvironment _hostingEnvironment;
-    public GalleryController(GalleryGramContext db, IWebHostEnvironment environment)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public GalleryController(GalleryGramContext db, IWebHostEnvironment environment, UserManager<ApplicationUser> userManager)
     {
       _db = db;
       _hostingEnvironment = environment;
+      _userManager = userManager;
     }
     
     [HttpGet("/gallery/upload")]
@@ -32,6 +36,12 @@ namespace GalleryGram.Controllers
             using (Stream fileStream = new FileStream(filePath, FileMode.Create)) {
                 await formFile.CopyToAsync(fileStream);
             }
+            Picture newPicture = new Picture();
+            newPicture.fileName = fileName;
+            string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            newPicture.user_id = userId;
+            _db.Pictures.Add(newPicture);
+            _db.SaveChanges();
           }
 
         return Redirect("/");

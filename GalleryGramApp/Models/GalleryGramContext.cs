@@ -6,7 +6,7 @@ namespace GalleryGram.Models
 {
   public class GalleryGramContext : IdentityDbContext<ApplicationUser>
   {
-    // public DbSet<ClassName> ClassNames { get; set; }   CHANGE CLASS NAME!!!
+    public DbSet<Picture> Pictures { get; set; }
 
     public GalleryGramContext(DbContextOptions options) : base(options) { } 
   }
