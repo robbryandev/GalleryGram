@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+@model IFormFile
+<form enctype="multipart/form-data" action="/gallery/upload" method="post">
+    <label asp-for="FileUpload.FormFile"></label>
+    <input asp-for="FileUpload.FormFile" type="file" name="formFile" id="formFile" required aria-required="true">
+    <span asp-validation-for="FileUpload.FormFile"></span>
+    <br>
+    <br>
+    <input asp-page-handler="Upload" class="btn btn-info" type="submit" value="Upload" />
+</form>
