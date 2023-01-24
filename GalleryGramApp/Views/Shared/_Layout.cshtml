@@ -22,11 +22,12 @@
     <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
     <div class="wrapper">
       <ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Gallery</a></li>
-<li><a href="#">Feedback</a></li>
+<li><a href="#">@Html.ActionLink("Home", "Index")</a></li>
+<li><a href="#">@Html.ActionLink("Gallery", "Gallery")</a></li>
+<li><a href="#">@Html.ActionLink("LogOff", "Account") </a></li>
+
+@* WIP ^^^^^^ Nav bar logoff need halp *@
+
 </ul>
 </div>
 <div class="content">
@@ -35,3 +36,4 @@
 </body>
 
 </html>
+

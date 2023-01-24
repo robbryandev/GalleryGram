@@ -6,7 +6,7 @@
 
 <br>
 
-<h1>Register Or Login</h1>
+<h1>Welcome to The GalleryGram</h1>
 <hr />
 <hr>
 @if (User.Identity.IsAuthenticated)
@@ -14,9 +14,20 @@
   <p>Hello @User.Identity.Name!</p>
   @using (Html.BeginForm("LogOff", "Account"))
   {
-    <input type="submit" class="btn btn-danger" value="Log out" />
+      <div class="svg-wrapper">
+  <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" width="150" />
+    <div id="text">
+      @* <a href=""><span class="spot"></span>Button 1</a> *@
+      <p style="margin-top: px;" class="spot"><input type="submit" class="btn" value="Log out" />
+
+      </p>
+    </div>
+  </svg>
+</div>
+    
   }
-  <a href="/gallery/upload">upload</a>
+
 }
 else
 {
