@@ -2,14 +2,27 @@
   Layout = "_Layout";
 }
 
+
 <body class="reglog">
 
+<h1>Welcome to The GalleryGram</h1>
 
+@using GalleryGram.Models
 
-
-  <h1>Welcome to The GalleryGram</h1>
-
-  @if (User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
+{
+  <body>
+ <div class="waviy">
+   <span style="--i:1">h</span>
+   <span style="--i:2">e</span>
+   <span style="--i:3">l</span>
+   <span style="--i:4">l</span>
+   <span style="--i:5">o</span>
+   <span style="--i:6">.</span>
+  </div>
+</body>
+  <h2>@User.Identity.Name!</h2>
+  @using (Html.BeginForm("LogOff", "Account"))
   {
 
     <body>
@@ -24,7 +37,6 @@
     </body>
     <h2>@User.Identity.Name!</h2>
     @using (Html.BeginForm("LogOff", "Account"))
-
     {
       <div class="svg-wrapper">
         <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
@@ -37,18 +49,35 @@
           </div>
         </svg>
       </div>
-
     }
-
+      </p>
+    </div>
+  </svg>
+</div>
+    
   }
-  else
+  <a href="/gallery/upload">upload</a>
+
+  @foreach (Picture picture in ViewBag.pictures)
   {
-    <div class="svg-wrapper">
-      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          @* <a href=""><span class="spot"></span>Button 1</a> *@
-          <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Register", "Register") </p>
+    <div class="card">
+     <div class="card-body">
+      <img src="@picture.fileName" class="card-img">
+      <br>
+      <button>Like</button>
+      <button>Add to Cart</button>
+     </div> 
+    </div>
+  }
+}
+else
+{
+  <div class="svg-wrapper">
+  <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" width="150" />
+    <div id="text">
+      @* <a href=""><span class="spot"></span>Button 1</a> *@
+      <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Register", "Register") </p>
 
         </div>
       </svg>

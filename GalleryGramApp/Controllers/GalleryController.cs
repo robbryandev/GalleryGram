@@ -37,7 +37,7 @@ namespace GalleryGram.Controllers
                 await formFile.CopyToAsync(fileStream);
             }
             Picture newPicture = new Picture();
-            newPicture.fileName = fileName;
+            newPicture.fileName = "/pictures/" + fileName;
             string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             newPicture.user_id = userId;
             _db.Pictures.Add(newPicture);
