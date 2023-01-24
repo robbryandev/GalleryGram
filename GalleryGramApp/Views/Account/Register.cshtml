@@ -5,9 +5,12 @@
 @using GalleryGram.ViewModels
 
 @model RegisterViewModel
+<body class="reglog">
+  
 
-<h2>Register a new user</h2>
+<h1>Register</h1>
 <hr />
+<hr>
 
 @if(!ViewData.ModelState.IsValid) 
 {
@@ -16,16 +19,42 @@
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 {
-  @Html.LabelFor(user => user.Email)
-  @Html.TextBoxFor(user=> user.Email)
+  @Html.LabelFor(user => user.Email) <br>
+  @Html.TextBoxFor(user=> user.Email)<br>
 
-  @Html.LabelFor(user=> user.Password)
-  @Html.EditorFor(user=> user.Password)
+  @Html.LabelFor(user=> user.Password)<br>
+  @Html.EditorFor(user=> user.Password)<br>
 
-  @Html.LabelFor(user=> user.ConfirmPassword)
-  @Html.EditorFor(user=> user.ConfirmPassword)
+  @Html.LabelFor(user=> user.ConfirmPassword)<br>
+  @Html.EditorFor(user=> user.ConfirmPassword)<br>
+<br>
+  
 
-  <input type="submit" value="Register" />
+  <div class="svg-wrapper">
+  <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" width="150" />
+    <div id="text"> <br>
+   <p style="margin-top: px;" class="spot"><input class="btn" type="submit" value="Register" />
+
+      </p>
+    </div>
+  </svg>
+</div>
 }
 
-<p>@Html.ActionLink("Back to accounts page", "Index")</p>
+
+<br>
+<div class="svg-wrapper">
+  <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" width="150" />
+    <div id="text"> <br>
+   <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Back to accounts", "Index")
+
+      </p>
+    </div>
+  </svg>
+</div>
+
+</body>
+
+
