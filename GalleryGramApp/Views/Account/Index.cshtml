@@ -2,6 +2,8 @@
   Layout = "_Layout";
 }
 
+@using GalleryGram.Models
+
 <h2>Authentication with Identity</h2>
 <hr />
 @if (User.Identity.IsAuthenticated)
@@ -12,6 +14,18 @@
     <input type="submit" class="btn btn-danger" value="Log out" />
   }
   <a href="/gallery/upload">upload</a>
+
+  @foreach (Picture picture in ViewBag.pictures)
+  {
+    <div class="card">
+     <div class="card-body">
+      <img src="@picture.fileName" class="card-img">
+      <br>
+      <button>Like</button>
+      <button>Add to Cart</button>
+     </div> 
+    </div>
+  }
 }
 else
 {
