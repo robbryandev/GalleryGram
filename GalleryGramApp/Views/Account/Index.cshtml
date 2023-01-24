@@ -4,15 +4,25 @@
  <body class="reglog">
   
 
-<br>
+
 
 <h1>Welcome to The GalleryGram</h1>
-<hr />
-<hr>
+
 @if (User.Identity.IsAuthenticated)
 {
-  <h2>Hello @User.Identity.Name!</h2>
+  <body>
+ <div class="waviy">
+   <span style="--i:1">h</span>
+   <span style="--i:2">e</span>
+   <span style="--i:3">l</span>
+   <span style="--i:4">l</span>
+   <span style="--i:5">o</span>
+   <span style="--i:6">.</span>
+  </div>
+</body>
+  <h2>@User.Identity.Name!</h2>
   @using (Html.BeginForm("LogOff", "Account"))
+  
   {
       <div class="svg-wrapper">
   <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
