@@ -20,22 +20,25 @@ namespace GalleryGram.Models
       ApplicationUser user1 = new ApplicationUser();
         // user1.Id = user1ID;
         user1.UserName = "david@gmail.com";
+        user1.NormalizedUserName = user1.UserName.ToUpper();
         // user1.Email = "david@gmail.com";
-        user1.PasswordHash = passwordHasher.HashPassword(user1, "password"); 
+        user1.PasswordHash = passwordHasher.HashPassword(user1, "1!qQwe"); 
       // Guid user2GID = Guid.NewGuid();
       // string user2ID = user1GID.ToString();
       ApplicationUser user2 = new ApplicationUser();
         // user2.Id = user2ID;
         user2.UserName = "robert@gmail.com";
+        user2.NormalizedUserName = user2.UserName.ToUpper();
         // user2.Email = "robert@gmail.com";
-        user2.PasswordHash = passwordHasher.HashPassword(user2, "password"); 
+        user2.PasswordHash = passwordHasher.HashPassword(user2, "1!qQwe"); 
       // Guid user3GID = Guid.NewGuid();
       // string user3ID = user1GID.ToString();
       ApplicationUser user3 = new ApplicationUser();
         // user3.Id = user3ID;
         user3.UserName = "lucas@gmail.com";
+        user3.NormalizedUserName = user3.UserName.ToUpper();
         // user3.Email = "lucas@gmail.com";
-        user3.PasswordHash = passwordHasher.HashPassword(user3, "password"); 
+        user3.PasswordHash = passwordHasher.HashPassword(user3, "1!qQwe"); 
 
       List<ApplicationUser> users = new List<ApplicationUser>{ user1, user2, user3 };
 
@@ -70,15 +73,15 @@ namespace GalleryGram.Models
       
       Picture pic7 = new Picture();
         pic7.picture_id = 7;
-        pic7.user_id = user2.Id;
+        pic7.user_id = user3.Id;
         pic7.fileName = "https://via.placeholder.com/600/b0f7cc";
       Picture pic8 = new Picture();
         pic8.picture_id = 8;
-        pic8.user_id = user2.Id;
+        pic8.user_id = user3.Id;
         pic8.fileName = "https://via.placeholder.com/600/54176f";
       Picture pic9 = new Picture();
         pic9.picture_id = 9;
-        pic9.user_id = user2.Id;
+        pic9.user_id = user3.Id;
         pic9.fileName = "https://via.placeholder.com/600/51aa97";
 
       List<Picture> pictures = new List<Picture> { pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9 };
