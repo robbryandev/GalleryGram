@@ -48,41 +48,41 @@ namespace GalleryGram.Models
       Picture pic1 = new Picture();
         pic1.picture_id = 1;
         pic1.user_id = user1.Id;
-        pic1.fileName = "https://via.placeholder.com/600/92c952";
+        pic1.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg";
       Picture pic2 = new Picture();
         pic2.picture_id = 2;
         pic2.user_id = user1.Id;
-        pic2.fileName = "https://via.placeholder.com/600/771796";
+        pic2.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg";
       Picture pic3 = new Picture();
         pic3.picture_id = 3;
         pic3.user_id = user1.Id;
-        pic3.fileName = "https://via.placeholder.com/600/24f355";
+        pic3.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg";
 
       Picture pic4 = new Picture();
         pic4.picture_id = 4;
         pic4.user_id = user2.Id;
-        pic4.fileName = "https://via.placeholder.com/600/d32776";
+        pic4.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg";
       Picture pic5 = new Picture();
         pic5.picture_id = 5;
         pic5.user_id = user2.Id;
-        pic5.fileName = "https://via.placeholder.com/600/f66b97";
+        pic5.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg";
       Picture pic6 = new Picture();
         pic6.picture_id = 6;
         pic6.user_id = user2.Id;
-        pic6.fileName = "https://via.placeholder.com/600/56a8c2";
+        pic6.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg";
       
       Picture pic7 = new Picture();
         pic7.picture_id = 7;
         pic7.user_id = user3.Id;
-        pic7.fileName = "https://via.placeholder.com/600/b0f7cc";
+        pic7.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg";
       Picture pic8 = new Picture();
         pic8.picture_id = 8;
         pic8.user_id = user3.Id;
-        pic8.fileName = "https://via.placeholder.com/600/54176f";
+        pic8.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg";
       Picture pic9 = new Picture();
         pic9.picture_id = 9;
         pic9.user_id = user3.Id;
-        pic9.fileName = "https://via.placeholder.com/600/51aa97";
+        pic9.fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg";
 
       List<Picture> pictures = new List<Picture> { pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9 };
 
