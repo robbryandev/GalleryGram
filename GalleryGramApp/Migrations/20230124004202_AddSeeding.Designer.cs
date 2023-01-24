@@ -3,6 +3,7 @@ using System;
 using GalleryGram.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GalleryGram.Migrations
 {
     [DbContext(typeof(GalleryGramContext))]
-    partial class GalleryGramContextModelSnapshot : ModelSnapshot
+    [Migration("20230124004202_AddSeeding")]
+    partial class AddSeeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,43 +87,40 @@ namespace GalleryGram.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8f7949b4-c254-4616-ac70-f5560eeeedf2",
+                            Id = "7e8ea7dc-e779-4594-94b0-6b3efb0bf16d",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e801e29c-a3ce-468c-9856-c4b8b77da8eb",
+                            ConcurrencyStamp = "656aa313-1e50-4c8e-9308-16a3709933e6",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            NormalizedUserName = "DAVID@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPZnfxUi/uzXTiwEq/Jx/JkOoBfvYE4hVpcMhTC7pOn3iIZ3S1jy0sRUHfge3/wX6g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC5Bdm2ctFuOsOAjqPgqHHhfpbh+f6TwZE4d2wTaKYnmklKok6FwO6eTRuVZ6KIflw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2ebae7d4-c1d1-40ea-9e68-ed92c760c8f3",
+                            SecurityStamp = "0c25c040-a5a0-428d-80ba-261fe7b61d1a",
                             TwoFactorEnabled = false,
                             UserName = "david@gmail.com"
                         },
                         new
                         {
-                            Id = "810e1de1-a854-4f5e-bb32-cf597c60c163",
+                            Id = "16322769-f263-48cd-88c4-50b160efe4df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4ef41810-74c7-4742-bc19-0c4ee1de5823",
+                            ConcurrencyStamp = "0c40b4fc-c895-462a-af09-4dfdfc915d95",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            NormalizedUserName = "ROBERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP01g2udxPhw3kR56q300y2me9EqIZvnMHePMWMZspXCbKdX0xbHJ8LXmdWICtx1yA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEJUloTvSxUPLIb7TXwdvJ8UTtT6kkkYEa/tVAzI17D9cSW+EHqmMM4RS94LmEL9+w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a13ece42-b79f-4597-a155-10754a91c1bb",
+                            SecurityStamp = "48040892-e4ca-4a67-8508-71de07d08b45",
                             TwoFactorEnabled = false,
                             UserName = "robert@gmail.com"
                         },
                         new
                         {
-                            Id = "76eda766-b4fa-4389-a8e6-c4fe85be42b1",
+                            Id = "b70a4e33-2d6b-466c-b3de-ef108c8db215",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e4442c41-4e72-4724-9f3e-80d708527095",
+                            ConcurrencyStamp = "3f443686-f603-4917-835c-5a40ab139422",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
-                            NormalizedUserName = "LUCAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOfvWO+NsHsu9CZMRH1JaPEEi/b5hhmvwhAcfWe9sHWMMzQhwxSeDi6lLJC207ISrA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEF2Nn/yhXx4zgIS5OWvzPFVNAgkp3rmP5TsAWLDeCYqaynp9+3i8sidTYsyiEk053w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7dbdcbd4-771c-4cf3-9ea3-ee173dd3aedf",
+                            SecurityStamp = "9314f3cf-b80e-46ed-b7b6-5d5b78fa1435",
                             TwoFactorEnabled = false,
                             UserName = "lucas@gmail.com"
                         });
@@ -148,55 +147,55 @@ namespace GalleryGram.Migrations
                         {
                             picture_id = 1,
                             fileName = "https://via.placeholder.com/600/92c952",
-                            user_id = "8f7949b4-c254-4616-ac70-f5560eeeedf2"
+                            user_id = "7e8ea7dc-e779-4594-94b0-6b3efb0bf16d"
                         },
                         new
                         {
                             picture_id = 2,
                             fileName = "https://via.placeholder.com/600/771796",
-                            user_id = "8f7949b4-c254-4616-ac70-f5560eeeedf2"
+                            user_id = "7e8ea7dc-e779-4594-94b0-6b3efb0bf16d"
                         },
                         new
                         {
                             picture_id = 3,
                             fileName = "https://via.placeholder.com/600/24f355",
-                            user_id = "8f7949b4-c254-4616-ac70-f5560eeeedf2"
+                            user_id = "7e8ea7dc-e779-4594-94b0-6b3efb0bf16d"
                         },
                         new
                         {
                             picture_id = 4,
                             fileName = "https://via.placeholder.com/600/d32776",
-                            user_id = "810e1de1-a854-4f5e-bb32-cf597c60c163"
+                            user_id = "16322769-f263-48cd-88c4-50b160efe4df"
                         },
                         new
                         {
                             picture_id = 5,
                             fileName = "https://via.placeholder.com/600/f66b97",
-                            user_id = "810e1de1-a854-4f5e-bb32-cf597c60c163"
+                            user_id = "16322769-f263-48cd-88c4-50b160efe4df"
                         },
                         new
                         {
                             picture_id = 6,
                             fileName = "https://via.placeholder.com/600/56a8c2",
-                            user_id = "810e1de1-a854-4f5e-bb32-cf597c60c163"
+                            user_id = "16322769-f263-48cd-88c4-50b160efe4df"
                         },
                         new
                         {
                             picture_id = 7,
                             fileName = "https://via.placeholder.com/600/b0f7cc",
-                            user_id = "76eda766-b4fa-4389-a8e6-c4fe85be42b1"
+                            user_id = "16322769-f263-48cd-88c4-50b160efe4df"
                         },
                         new
                         {
                             picture_id = 8,
                             fileName = "https://via.placeholder.com/600/54176f",
-                            user_id = "76eda766-b4fa-4389-a8e6-c4fe85be42b1"
+                            user_id = "16322769-f263-48cd-88c4-50b160efe4df"
                         },
                         new
                         {
                             picture_id = 9,
                             fileName = "https://via.placeholder.com/600/51aa97",
-                            user_id = "76eda766-b4fa-4389-a8e6-c4fe85be42b1"
+                            user_id = "16322769-f263-48cd-88c4-50b160efe4df"
                         });
                 });
 

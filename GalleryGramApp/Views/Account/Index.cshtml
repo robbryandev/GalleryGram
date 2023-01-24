@@ -4,9 +4,9 @@
  <body class="reglog">
   
 
-
-
 <h1>Welcome to The GalleryGram</h1>
+
+@using GalleryGram.Models
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -37,7 +37,19 @@
 </div>
     
   }
+  <a href="/gallery/upload">upload</a>
 
+  @foreach (Picture picture in ViewBag.pictures)
+  {
+    <div class="card">
+     <div class="card-body">
+      <img src="@picture.fileName" class="card-img">
+      <br>
+      <button>Like</button>
+      <button>Add to Cart</button>
+     </div> 
+    </div>
+  }
 }
 else
 {
