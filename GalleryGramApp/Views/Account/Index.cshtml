@@ -11,7 +11,7 @@
 <hr>
 @if (User.Identity.IsAuthenticated)
 {
-  <p>Hello @User.Identity.Name!</p>
+  <h2>Hello @User.Identity.Name!</h2>
   @using (Html.BeginForm("LogOff", "Account"))
   {
       <div class="svg-wrapper">
