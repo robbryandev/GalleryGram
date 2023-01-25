@@ -9,6 +9,7 @@ namespace GalleryGram.Models
   {
     public DbSet<Picture> Pictures { get; set; }
     public DbSet<Likes> Likes { get; set; }
+    public DbSet<DbOrder> DbOrders { get; set; }
 
     public GalleryGramContext(DbContextOptions options) : base(options) { } 
 

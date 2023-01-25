@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GalleryGram.Migrations
+namespace GalleryGramApp.Migrations
 {
     [DbContext(typeof(GalleryGramContext))]
     partial class GalleryGramContextModelSnapshot : ModelSnapshot
@@ -113,19 +113,20 @@ namespace GalleryGram.Migrations
                         },
                         new
                         {
-                            Id = "0e841f3a-9ee5-46e2-8561-cab8f7535527",
+                            Id = "52cabb75-5c46-4e44-af4a-4f5d256399d1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "929cecd9-d501-41c4-b2d3-d0b3efd0b67d",
+                            ConcurrencyStamp = "e5bd2589-c03b-411f-bcca-f6d0afce08c7",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "LUCAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGZy+D2b//ulBaJdYi1vtXbVlnGqIRHEbUG9k8pkuflTjAfK49dl2trzdC/2/Dm7Ag==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKeqSogCrOOm6OoUadSTSDXNUsruzLatbMhgHvp8sodqPt8GkAGb4nZ4v8VIZjb08Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "73a5e53e-f625-49fc-ade9-e1a400704e76",
+                            SecurityStamp = "f739c3cc-1763-4d32-9b06-3cae737d3ce0",
                             TwoFactorEnabled = false,
                             UserName = "lucas@gmail.com"
                         });
                 });
+
 
             modelBuilder.Entity("GalleryGram.Models.Likes", b =>
                 {
@@ -135,13 +136,36 @@ namespace GalleryGram.Migrations
 
                     b.Property<int>("picture_id")
                         .HasColumnType("int");
+                        
+                    b.Property<string>("user_id")
+                        .HasColumnType("longtext");
+                        
+                     b.HasKey("like_id");
+                 
+                     b.ToTable("Likes");
+                 });
+
+            modelBuilder.Entity("GalleryGram.Models.DbOrder", b =>
+                {
+                    b.Property<int>("order_id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("confirmation_id")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("cost")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("status")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("user_id")
                         .HasColumnType("longtext");
+                        
+                    b.HasKey("order_id");
 
-                    b.HasKey("like_id");
-
-                    b.ToTable("Likes");
+                    b.ToTable("DbOrders");
                 });
 
             modelBuilder.Entity("GalleryGram.Models.Picture", b =>
