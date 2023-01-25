@@ -30,6 +30,14 @@ namespace GalleryGram.Controllers
           .Where(pic => pic.user_id == userId)
           .ToList();
         ViewBag.pictures = pictures;
+        List<Likes> userLikes = _db.Likes
+          .Where(like => like.user_id == userId)
+          .ToList();
+        List<Picture> likedPictures = _db.Pictures
+          .ToList()
+          .Where(pic => userLikes.Any(like => like.picture_id == pic.picture_id))
+          .ToList();
+        ViewBag.likes = likedPictures;
       }
 
       return View();

@@ -3,16 +3,18 @@ using System;
 using GalleryGram.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GalleryGramApp.Migrations
+namespace GalleryGram.Migrations
 {
     [DbContext(typeof(GalleryGramContext))]
-    partial class GalleryGramContextModelSnapshot : ModelSnapshot
+    [Migration("20230125190259_AddLikes")]
+    partial class AddLikes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,20 +115,19 @@ namespace GalleryGramApp.Migrations
                         },
                         new
                         {
-                            Id = "52cabb75-5c46-4e44-af4a-4f5d256399d1",
+                            Id = "0e841f3a-9ee5-46e2-8561-cab8f7535527",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e5bd2589-c03b-411f-bcca-f6d0afce08c7",
+                            ConcurrencyStamp = "929cecd9-d501-41c4-b2d3-d0b3efd0b67d",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "LUCAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKeqSogCrOOm6OoUadSTSDXNUsruzLatbMhgHvp8sodqPt8GkAGb4nZ4v8VIZjb08Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGZy+D2b//ulBaJdYi1vtXbVlnGqIRHEbUG9k8pkuflTjAfK49dl2trzdC/2/Dm7Ag==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f739c3cc-1763-4d32-9b06-3cae737d3ce0",
+                            SecurityStamp = "73a5e53e-f625-49fc-ade9-e1a400704e76",
                             TwoFactorEnabled = false,
                             UserName = "lucas@gmail.com"
                         });
                 });
-
 
             modelBuilder.Entity("GalleryGram.Models.Likes", b =>
                 {
@@ -136,36 +137,13 @@ namespace GalleryGramApp.Migrations
 
                     b.Property<int>("picture_id")
                         .HasColumnType("int");
-                        
-                    b.Property<string>("user_id")
-                        .HasColumnType("longtext");
-                        
-                     b.HasKey("like_id");
-                 
-                     b.ToTable("Likes");
-                 });
-
-            modelBuilder.Entity("GalleryGram.Models.DbOrder", b =>
-                {
-                    b.Property<int>("order_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("confirmation_id")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("cost")
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("status")
-                        .HasColumnType("longtext");
 
                     b.Property<string>("user_id")
                         .HasColumnType("longtext");
-                        
-                    b.HasKey("order_id");
 
-                    b.ToTable("DbOrders");
+                    b.HasKey("like_id");
+
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("GalleryGram.Models.Picture", b =>
