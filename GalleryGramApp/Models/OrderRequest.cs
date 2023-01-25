@@ -43,7 +43,7 @@ namespace GalleryGram.Models
         public Recipient recipient { get; set; }
         public List<Item> items { get; set; }
 
-        public static async Task<OrderResponse> Post(Address address, string userName, string userEmail)
+        public static async Task<OrderResponse> Post(Address address, Asset asset, string userName, string userEmail)
         {
           OrderRequest order = new OrderRequest();
           order.items = new List<Item>();
@@ -53,10 +53,10 @@ namespace GalleryGram.Models
           order.recipient.name = userName;
           order.recipient.email = userEmail;
 
-          Asset asset = new Asset() {
-            printArea = "default",
-            url = "https://your-image-url/image.png" // Change to selected image!
-          };
+          // Asset asset = new Asset() {
+          //   printArea = "default",
+          //   url = "https://your-image-url/image.png" // Change to selected image!
+          // };
 
           Item item = new Item() { 
             sku = "GLOBAL-FAP-8x10", // Product

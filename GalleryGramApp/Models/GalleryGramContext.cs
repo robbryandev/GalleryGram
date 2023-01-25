@@ -8,6 +8,7 @@ namespace GalleryGram.Models
   public class GalleryGramContext : IdentityDbContext<ApplicationUser>
   {
     public DbSet<Picture> Pictures { get; set; }
+    public DbSet<Likes> Likes { get; set; }
     public DbSet<DbOrder> DbOrders { get; set; }
 
     public GalleryGramContext(DbContextOptions options) : base(options) { } 

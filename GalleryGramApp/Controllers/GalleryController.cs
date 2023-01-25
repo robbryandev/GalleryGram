@@ -42,6 +42,23 @@ namespace GalleryGram.Controllers
       return View(Shuffle(allPictures, rand));
     }
 
+    [HttpPost("/gallery/like/{id}")]
+    public void Like(int id) {
+      Picture thisPicture = _db.Pictures
+        .FirstOrDefault(pic => pic.picture_id == id);
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      bool likeExists = _db.Likes
+        .Any(like => like.user_id == userId &&
+        like.picture_id == thisPicture.picture_id);
+      if (!likeExists) {
+        Likes newLike = new Likes();
+        newLike.picture_id = thisPicture.picture_id;
+        newLike.user_id = userId;
+        _db.Likes.Add(newLike);
+        _db.SaveChanges();
+      }
+    }
+
     [HttpGet("/gallery/upload")]
     public ActionResult Upload() {
       return View();
