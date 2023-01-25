@@ -1,0 +1,16 @@
+@model GalleryGram.Models.Address
+
+<h4>Place a new order</h4>
+<form action="/order/create" method="post">
+  <label for="line1">Line 1</label>
+  <input type="text" id="line1" name="line1">
+  <label for="line2">Line 2</label>
+  <input type="text" id="line2" name="line2">
+  <label for="postalOrZipCode">Postal zip code</label>
+  <input type="text" id="postalOrZipCode" name="postalOrZipCode">
+  <label for="countryCode">Country code</label>
+  <input type="text" id="countryCode" name="countryCode">
+  <label for="townOrCity">Town or City</label>
+  <input type="text" id="townOrCity" name="townOrCity">
+  <button type="submit">Confirm order</button>
+</form>

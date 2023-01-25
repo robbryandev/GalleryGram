@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@using GalleryGram.Models
+
+<h1>Order Confirmation</h1>
+
+<p>Conformation Number: @Model.confirmation_id</p>
+
+<p>Status: @Model.status</p>
+
+<p>Cost: $@Model.cost</p>
+
+@* <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Return to account", "account/index") *@
+<a href="/account"><p p style="margin-top: 5px;" class="spot">Return to account</p></a>
