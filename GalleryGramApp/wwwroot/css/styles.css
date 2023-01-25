@@ -307,7 +307,7 @@ h1 {
   margin: 15px 0;
 }
 
-.wrapper ul li a {
+.wrapper ul li .drop-link {
   color: none;
   text-decoration: none;
   font-size: 30px;
@@ -321,7 +321,7 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.wrapper ul li a:after {
+.wrapper ul li .drop-link:after {
   position: absolute;
   content: "";
   background: #fff;
@@ -339,11 +339,11 @@ h1 {
   transition: transform 0.3s ease;
 }
 
-.wrapper ul li a:hover:after {
+.wrapper ul li .drop-link:hover:after {
   transform: scaleY(1);
 }
 
-.wrapper ul li a:hover {
+.wrapper ul li .drop-link:hover {
   color: #fff;
 }
 

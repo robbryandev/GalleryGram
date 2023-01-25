@@ -22,9 +22,9 @@
     <label for="active" class="menu-btn"style="position: fixed"><i class="fas fa-bars"></i></label>
     <div class="wrapper" ;>
       <ul>
-<li><a href="#">@Html.ActionLink("Home", "Index", "Account")</a></li>
-<li><a href="#">@Html.ActionLink("Gallery", "Gallery")</a></li>
-<li><a href="#">@Html.ActionLink("Log Out", "Index", "Account") </a></li>
+<li><a class="drop-link" href="/account">Home</a></li>
+<li><a class="drop-link" href="/gallery">Gallery</a></li>
+<li><form class="m-0 p-0" action="/account/logoff" method="post"><button class="btn drop-link" type="submit">LogOut</button></form></li>
 @* <li><a href="#">@Html.ActionLink("LogOff", "Account") </a></li> *@
 
 @* WIP ^^^^^^ Nav bar logoff need halp *@
