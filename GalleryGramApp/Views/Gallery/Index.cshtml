@@ -4,39 +4,16 @@
 
 <body class="reglog">
 
-  <h1>Welcome to your GalleryGram</h1>
-
   @using GalleryGram.Models
+
+  <h1>Gallery</h1>
 
   @if (User.Identity.IsAuthenticated)
   {
-    <div class="waviy">
-      <span style="--i:1">h</span>
-      <span style="--i:2">e</span>
-      <span style="--i:3">l</span>
-      <span style="--i:4">l</span>
-      <span style="--i:5">o</span>
-      <span style="--i:6">!</span>
-    </div>
-    <h2>@User.Identity.Name!</h2>
-
-
-
-    <div class="svg-wrapper">
-      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          @* <a href=""><span class="spot"></span>Button 1</a> *@
-          <p style="margin-top: 5px;" class="spot"><a href="/gallery/upload">upload Image</a>
-
-          </p>
-        </div>
-      </svg>
-    </div>
 
   <div class="row row-cols-4">
 
-    @foreach (Picture picture in ViewBag.pictures)
+    @foreach (Picture picture in Model)
     {
       <div class="card col mx-2">
         <div class="card-body">
@@ -82,29 +59,9 @@
     }
   </div>
   }
-    else
+  else
   {
-    <div class="svg-wrapper">
-      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          @* <a href=""><span class="spot"></span>Button 1</a> *@
-          <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Register", "Register") </p>
-
-        </div>
-      </svg>
-    </div>
-    <div class="svg-wrapper">
-      <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-        <rect id="shape" height="40" width="150" />
-        <div id="text">
-          @* <a href=""><span class="spot"></span>Button 1</a> *@
-          <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Log in", "Login")
-
-          </p>
-        </div>
-      </svg>
-    </div>
+    <p>You must be logged in to view the Gallery</p>
   }
 </body>
 

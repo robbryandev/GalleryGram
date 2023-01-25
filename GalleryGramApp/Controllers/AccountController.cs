@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using GalleryGram.Models;
 using System.Threading.Tasks;
 using GalleryGram.ViewModels;
+using System.Security.Claims;
 
 namespace GalleryGram.Controllers
 {
@@ -21,6 +22,16 @@ namespace GalleryGram.Controllers
 
     public ActionResult Index()
     {
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      
+      if (userId != null)
+      {
+        List<Picture> pictures = _db.Pictures
+          .Where(pic => pic.user_id == userId)
+          .ToList();
+        ViewBag.pictures = pictures;
+      }
+
       return View();
     }
 
