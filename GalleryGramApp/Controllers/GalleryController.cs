@@ -53,7 +53,7 @@ namespace GalleryGram.Controllers
           string uploads = Path.Combine(_hostingEnvironment.WebRootPath, "pictures");
           Guid fileNameID = Guid.NewGuid();
           string fileExt =  System.IO.Path.GetExtension(formFile.FileName);
-          List<string> validExts = new List<string>{".png", ".jpeg"};
+          List<string> validExts = new List<string>{".png", ".jpg"};
           if (validExts.Contains(fileExt))
           {
             string fileName = fileNameID.ToString() + fileExt;
