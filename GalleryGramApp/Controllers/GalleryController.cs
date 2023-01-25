@@ -44,7 +44,7 @@ namespace GalleryGram.Controllers
             _db.SaveChanges();
           }
 
-        return Redirect("/");
+        return Redirect("/Account/Index");
     }
   }
 }
