@@ -3,6 +3,7 @@ using System;
 using GalleryGram.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GalleryGramApp.Migrations
 {
     [DbContext(typeof(GalleryGramContext))]
-    partial class GalleryGramContextModelSnapshot : ModelSnapshot
+    [Migration("20230125200134_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,24 +129,6 @@ namespace GalleryGramApp.Migrations
                         });
                 });
 
-
-            modelBuilder.Entity("GalleryGram.Models.Likes", b =>
-                {
-                    b.Property<int>("like_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("picture_id")
-                        .HasColumnType("int");
-                        
-                    b.Property<string>("user_id")
-                        .HasColumnType("longtext");
-                        
-                     b.HasKey("like_id");
-                 
-                     b.ToTable("Likes");
-                 });
-
             modelBuilder.Entity("GalleryGram.Models.DbOrder", b =>
                 {
                     b.Property<int>("order_id")
@@ -162,7 +146,7 @@ namespace GalleryGramApp.Migrations
 
                     b.Property<string>("user_id")
                         .HasColumnType("longtext");
-                        
+
                     b.HasKey("order_id");
 
                     b.ToTable("DbOrders");
