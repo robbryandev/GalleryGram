@@ -5,7 +5,7 @@
 @model GalleryGram.Models.Address
 
 <h4>Place a new order</h4>
-<form action="/order/create" method="post">
+<form action="/order/create/@ViewBag.pictureId" method="post">
   <label for="line1">Line 1</label>
   <input type="text" id="line1" name="line1" required>
   <br><br>

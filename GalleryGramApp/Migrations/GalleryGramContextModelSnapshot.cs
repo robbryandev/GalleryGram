@@ -85,43 +85,43 @@ namespace GalleryGramApp.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cf9e094a-0e5f-4714-bf67-b79d209e6a26",
+                            Id = "8019eb7d-a9da-40ab-866d-1237ed60d1bf",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4bf7774a-506f-4a81-be1f-ce9297598bb8",
+                            ConcurrencyStamp = "2cd07851-6b12-4f5f-9085-2b16f2c0abb6",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "DAVID@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIaocmm30r+vOAI4z4SZkYPNKB9KZSZLsc4rJ4p0S9kLIvooBKZJr7Qg/hlbOGDhwQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBE9pXJ65/7B39cm/XJp+iXA8DGrCGGOOaB6nJ6d/rGKYIb1TSE7Kv6ks6Efn12iZw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cccef78f-1e55-4564-a09a-5d12f9add460",
+                            SecurityStamp = "1cec763e-69bb-4dfe-9b2b-86df47ce99d5",
                             TwoFactorEnabled = false,
                             UserName = "david@gmail.com"
                         },
                         new
                         {
-                            Id = "8014bb8d-85c6-4c1c-afc9-48a3f372b896",
+                            Id = "3915afc1-e5ed-4631-a523-110bffef0889",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "fd0b5dd8-8681-461a-8279-7e3a7443e532",
+                            ConcurrencyStamp = "9c94be69-9182-4c86-91ce-6d1a9425a57c",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ROBERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFJIYxGpNb+xXwLnOLIhnBTQCi6H4MSAyYR50SwOtO0VPSYRnag0Bw6tzsKzZ2mKCg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBGiYrNKTbJ5ZW6GOf2gXyUqK3X912YW5dzONqBKfoYwpE/DTScIWBt8w4mxLG1osQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a5ce41f5-1065-4ae8-85bd-e24330c35c69",
+                            SecurityStamp = "c9f84bc7-1c1e-44ac-b165-097ad1fb55bd",
                             TwoFactorEnabled = false,
                             UserName = "robert@gmail.com"
                         },
                         new
                         {
-                            Id = "52cabb75-5c46-4e44-af4a-4f5d256399d1",
+                            Id = "fcce0f0d-0d77-4463-913a-3b937e8eb129",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e5bd2589-c03b-411f-bcca-f6d0afce08c7",
+                            ConcurrencyStamp = "24b159c2-a049-48ca-845e-d29aad970615",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "LUCAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKeqSogCrOOm6OoUadSTSDXNUsruzLatbMhgHvp8sodqPt8GkAGb4nZ4v8VIZjb08Q==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ9Nc/XbBK5nl+IGV6JaEz1cAs6qqOL6frQe/STJZpkrnDPyUReVTQZtCQGAes51Mg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f739c3cc-1763-4d32-9b06-3cae737d3ce0",
+                            SecurityStamp = "6cc2b1ac-468a-4ea3-89d2-bf578739d5a1",
                             TwoFactorEnabled = false,
                             UserName = "lucas@gmail.com"
                         });
@@ -189,55 +189,55 @@ namespace GalleryGramApp.Migrations
                         {
                             picture_id = 1,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-                            user_id = "cf9e094a-0e5f-4714-bf67-b79d209e6a26"
+                            user_id = "8019eb7d-a9da-40ab-866d-1237ed60d1bf"
                         },
                         new
                         {
                             picture_id = 2,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
-                            user_id = "cf9e094a-0e5f-4714-bf67-b79d209e6a26"
+                            user_id = "8019eb7d-a9da-40ab-866d-1237ed60d1bf"
                         },
                         new
                         {
                             picture_id = 3,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg",
-                            user_id = "cf9e094a-0e5f-4714-bf67-b79d209e6a26"
+                            user_id = "8019eb7d-a9da-40ab-866d-1237ed60d1bf"
                         },
                         new
                         {
                             picture_id = 4,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg",
-                            user_id = "8014bb8d-85c6-4c1c-afc9-48a3f372b896"
+                            user_id = "3915afc1-e5ed-4631-a523-110bffef0889"
                         },
                         new
                         {
                             picture_id = 5,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
-                            user_id = "8014bb8d-85c6-4c1c-afc9-48a3f372b896"
+                            user_id = "3915afc1-e5ed-4631-a523-110bffef0889"
                         },
                         new
                         {
                             picture_id = 6,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
-                            user_id = "8014bb8d-85c6-4c1c-afc9-48a3f372b896"
+                            user_id = "3915afc1-e5ed-4631-a523-110bffef0889"
                         },
                         new
                         {
                             picture_id = 7,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
-                            user_id = "0e841f3a-9ee5-46e2-8561-cab8f7535527"
+                            user_id = "fcce0f0d-0d77-4463-913a-3b937e8eb129"
                         },
                         new
                         {
                             picture_id = 8,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-                            user_id = "0e841f3a-9ee5-46e2-8561-cab8f7535527"
+                            user_id = "fcce0f0d-0d77-4463-913a-3b937e8eb129"
                         },
                         new
                         {
                             picture_id = 9,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-                            user_id = "0e841f3a-9ee5-46e2-8561-cab8f7535527"
+                            user_id = "fcce0f0d-0d77-4463-913a-3b937e8eb129"
                         });
                 });
 

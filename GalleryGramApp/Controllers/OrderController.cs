@@ -18,18 +18,21 @@ namespace GalleryGram.Controllers
       _userManager = userManager;
     }
     
-    public ActionResult Create()
+    [HttpGet("/order/create/{pictureId}")]
+    public ActionResult Create(int pictureId)
     {
+      ViewBag.pictureId = pictureId;
       return View();
     }
 
-    [HttpPost]
-    public async Task<ActionResult> Create(string line1, string line2, string postalOrZipCode, string countryCode, string townOrCity, string stateOrCounty)
+    [HttpPost("/order/create/{pictureId}")]
+    public async Task<ActionResult> Create(int pictureId, string line1, string line2, string postalOrZipCode, string countryCode, string townOrCity, string stateOrCounty)
     {
       string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
       // User name is currently the email
       string userName = HttpContext.User.Identity.Name;
       string userEmail = userName;
+
       GalleryGram.Models.Address newAddress = new GalleryGram.Models.Address();
       newAddress.line1 = line1;
       newAddress.line2 = line2;
@@ -38,7 +41,14 @@ namespace GalleryGram.Controllers
       newAddress.townOrCity = townOrCity;
       newAddress.stateOrCounty = stateOrCounty;
 
-      OrderResponse response = await OrderRequest.Post(newAddress, userName, userEmail);
+      Picture thisPic = _db.Pictures
+        .FirstOrDefault(entry => entry.picture_id == pictureId);
+      GalleryGram.Models.Asset newAsset = new GalleryGram.Models.Asset() {
+        printArea = "default",
+        url = thisPic.fileName 
+      };
+
+      OrderResponse response = await OrderRequest.Post(newAddress, newAsset, userName, userEmail);
 
       DbOrder newOrder = new DbOrder();
       newOrder.user_id = userId;
