@@ -16,7 +16,32 @@ namespace GalleryGram.Controllers
       _hostingEnvironment = environment;
       _userManager = userManager;
     }
+
+    public List<Picture> Swap(List<Picture> list, int i, int j)
+    {
+        var temp = list[i];
+        list[i] = list[j];
+        list[j] = temp;
+        return list;
+    }
+
+    public List<Picture> Shuffle(List<Picture> list, Random rnd)
+    {
+        List<Picture> result = list;
+        for(var i=result.Count; i > 0; i--)
+        {
+          result = Swap(result, 0, rnd.Next(0, i));
+        }
+        return result;
+    }
     
+    [HttpGet("/gallery")]
+    public ActionResult Index() {
+      Random rand = new Random();
+      List<Picture> allPictures = _db.Pictures.ToList();
+      return View(Shuffle(allPictures, rand));
+    }
+
     [HttpGet("/gallery/upload")]
     public ActionResult Upload() {
       return View();

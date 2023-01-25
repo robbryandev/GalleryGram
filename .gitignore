@@ -1,5 +1,5 @@
-bin/
-obj/
-appsettings.json
-wwwroot/pictures/*.png
+**/bin/
+**/obj/
+**/appsettings.json
+**/wwwroot/pictures/*.png
 .vscodedot
