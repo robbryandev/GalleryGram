@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using GalleryGram.ResponseModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace GalleryGram.Models
 {
@@ -36,7 +37,7 @@ namespace GalleryGram.Models
         public string email { get; set; }
     }
 
-    public class Order
+    public class OrderRequest
     {
         public string shippingMethod { get; set; }
         public Recipient recipient { get; set; }
@@ -44,8 +45,8 @@ namespace GalleryGram.Models
 
         public static async Task<OrderResponse> Post(Address address, string userName, string userEmail)
         {
-          Order order = new Order();
-          order.items = new List<GalleryGram.ResponseModels.Item>();
+          OrderRequest order = new OrderRequest();
+          order.items = new List<Item>();
           order.shippingMethod = "Budget";
           order.recipient = new Recipient();
           order.recipient.address = address;
@@ -57,7 +58,7 @@ namespace GalleryGram.Models
             url = "https://your-image-url/image.png" // Change to selected image!
           };
 
-          GalleryGram.ResponseModels.Item item = new GalleryGram.ResponseModels.Item() { 
+          Item item = new Item() { 
             sku = "GLOBAL-FAP-8x10", // Product
             copies = 1, // User can select copies in future?
             sizing = "fillPrintArea",

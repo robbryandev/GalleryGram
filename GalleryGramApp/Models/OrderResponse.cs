@@ -2,13 +2,22 @@ using GalleryGram.Models;
 
 namespace GalleryGram.ResponseModels
 {
-  // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-    public class Asset : GalleryGram.Models.Asset
+    public class Address
+    {
+        public string line1 { get; set; }
+        public string line2 { get; set; }
+        public string postalOrZipCode { get; set; }
+        public string countryCode { get; set; }
+        public string townOrCity { get; set; }
+        public object stateOrCounty { get; set; }
+    }
+
+    public class Asset
     {
         public string id { get; set; }
-        // public string printArea { get; set; }
+        public string printArea { get; set; }
         public string md5Hash { get; set; }
-        // public string url { get; set; }
+        public string url { get; set; }
         public string status { get; set; }
     }
 
@@ -26,16 +35,16 @@ namespace GalleryGram.ResponseModels
         public string shipping { get; set; }
     }
 
-    public class Item : GalleryGram.Models.Item
+    public class Item
     {
         public string id { get; set; }
         public string status { get; set; }
         public string merchantReference { get; set; }
-        // public string sku { get; set; }
-        // public int copies { get; set; }
-        // public string sizing { get; set; }
-        public GalleryGram.ResponseModels.Attributes attributes { get; set; }
-        // public List<Asset> assets { get; set; }
+        public string sku { get; set; }
+        public int copies { get; set; }
+        public string sizing { get; set; }
+        public Attributes attributes { get; set; }
+        public List<Asset> assets { get; set; }
         public RecipientCost recipientCost { get; set; }
     }
 
@@ -46,43 +55,42 @@ namespace GalleryGram.ResponseModels
         public int sourceId { get; set; }
     }
 
-    public class Order : GalleryGram.Models.Order
+    public class Order
     {
         public string id { get; set; }
         public DateTime created { get; set; }
-        public new List<GalleryGram.ResponseModels.Item> items { get; set; } = new List<GalleryGram.ResponseModels.Item>{};
         public DateTime lastUpdated { get; set; }
         public object callbackUrl { get; set; }
         public string merchantReference { get; set; }
-        // public string shippingMethod { get; set; }
+        public string shippingMethod { get; set; }
         public object idempotencyKey { get; set; }
         public Status status { get; set; }
         public List<object> charges { get; set; }
         public List<object> shipments { get; set; }
-        // public Recipient recipient { get; set; }
-        // public List<Item> items { get; set; }
+        public Recipient recipient { get; set; }
+        public List<Item> items { get; set; }
         public object packingSlip { get; set; }
         public Metadata metadata { get; set; }
     }
 
-    public class Recipient : GalleryGram.Models.Recipient
+    public class Recipient
     {
-        // public string name { get; set; }
-        // public object email { get; set; }
+        public string name { get; set; }
+        public object email { get; set; }
         public object phoneNumber { get; set; }
-        // public Address address { get; set; }
+        public Address address { get; set; }
     }
 
     public class RecipientCost
     {
-        public string amount { get; set; } = "99.99";
+        public string amount { get; set; }
         public string currency { get; set; }
     }
 
     public class OrderResponse
     {
         public string outcome { get; set; }
-        public GalleryGram.ResponseModels.Order order { get; set; }
+        public Order order { get; set; }
         public string traceParent { get; set; }
     }
 
@@ -98,6 +106,4 @@ namespace GalleryGram.ResponseModels
         public List<object> issues { get; set; }
         public Details details { get; set; }
     }
-
-
 }
