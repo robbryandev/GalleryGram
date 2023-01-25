@@ -2,4 +2,4 @@
 **/obj/
 **/appsettings.json
 **/wwwroot/pictures/*.png
-.vscodedot
+EnvironmentVariables.cs

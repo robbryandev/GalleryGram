@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model GalleryGram.Models.Address
+
+<h4>Place a new order</h4>
+<form action="/order/create" method="post">
+  <label for="line1">Line 1</label>
+  <input type="text" id="line1" name="line1" required>
+  <br><br>
+  <label for="line2">Line 2</label>
+  <input type="text" id="line2" name="line2">
+  <br><br>
+  <label for="postalOrZipCode">Postal zip code</label>
+  <input type="text" id="postalOrZipCode" name="postalOrZipCode" required>
+  <br><br>
+  <label for="countryCode">Country code</label>
+  <input type="text" id="countryCode" name="countryCode" required>
+  <br><br>
+  <label for="townOrCity">Town or City</label>
+  <input type="text" id="townOrCity" name="townOrCity" required>
+  <br><br>
+  <label for="stateOrCounty">State or County</label>
+  <input type="text" id="stateOrCounty" name="stateOrCounty" required>
+  <br><br>
+  <button type="submit">Confirm order</button>
+</form>

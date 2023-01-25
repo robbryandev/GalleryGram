@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace GalleryGram.Migrations
+namespace GalleryGramApp.Migrations
 {
-    public partial class AddIdentity : Migration
+    public partial class AddInitilal : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -64,6 +64,44 @@ namespace GalleryGram.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "DbOrders",
+                columns: table => new
+                {
+                    order_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    user_id = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    confirmation_id = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    status = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    cost = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DbOrders", x => x.order_id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Pictures",
+                columns: table => new
+                {
+                    picture_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    user_id = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    fileName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Pictures", x => x.picture_id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -194,6 +232,32 @@ namespace GalleryGram.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "02abacf2-f5b6-4abe-ab23-1e4862665fc0", 0, "7a53bb22-7b40-4fc8-bb37-2915f81b6625", null, false, false, null, null, "DAVID@GMAIL.COM", "AQAAAAEAACcQAAAAEGJvBYh3SDHy7iiGzIzZBOdvX+3tj1Wyrnba3+mOyrBe2ZDmfar+4nVdwuCaxMolYA==", null, false, "0dc73068-f971-4b6e-bdd0-cdc5f16d5e14", false, "david@gmail.com" },
+                    { "52cabb75-5c46-4e44-af4a-4f5d256399d1", 0, "e5bd2589-c03b-411f-bcca-f6d0afce08c7", null, false, false, null, null, "LUCAS@GMAIL.COM", "AQAAAAEAACcQAAAAEKeqSogCrOOm6OoUadSTSDXNUsruzLatbMhgHvp8sodqPt8GkAGb4nZ4v8VIZjb08Q==", null, false, "f739c3cc-1763-4d32-9b06-3cae737d3ce0", false, "lucas@gmail.com" },
+                    { "c95f084d-eba5-41da-8fee-723d8c6f7e3d", 0, "6e3e9bfd-3789-4ada-8038-b61b50d93b98", null, false, false, null, null, "ROBERT@GMAIL.COM", "AQAAAAEAACcQAAAAEDWYyUD32zGJMvqwc1QfR2MKAvOm+Uq2Hd2yx7DgNtEQdhjn1a3Y9vslWjv2ojUp0g==", null, false, "1d1695e9-5cdb-44f0-a029-e5ec41513ed1", false, "robert@gmail.com" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Pictures",
+                columns: new[] { "picture_id", "fileName", "user_id" },
+                values: new object[,]
+                {
+                    { 1, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "02abacf2-f5b6-4abe-ab23-1e4862665fc0" },
+                    { 2, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg", "02abacf2-f5b6-4abe-ab23-1e4862665fc0" },
+                    { 3, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg", "02abacf2-f5b6-4abe-ab23-1e4862665fc0" },
+                    { 4, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "c95f084d-eba5-41da-8fee-723d8c6f7e3d" },
+                    { 5, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", "c95f084d-eba5-41da-8fee-723d8c6f7e3d" },
+                    { 6, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg", "c95f084d-eba5-41da-8fee-723d8c6f7e3d" },
+                    { 7, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg", "52cabb75-5c46-4e44-af4a-4f5d256399d1" },
+                    { 8, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "52cabb75-5c46-4e44-af4a-4f5d256399d1" },
+                    { 9, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", "52cabb75-5c46-4e44-af4a-4f5d256399d1" }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -248,6 +312,12 @@ namespace GalleryGram.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "DbOrders");
+
+            migrationBuilder.DropTable(
+                name: "Pictures");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
