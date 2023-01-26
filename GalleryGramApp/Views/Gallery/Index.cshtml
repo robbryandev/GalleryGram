@@ -10,12 +10,12 @@
 
   @if (User.Identity.IsAuthenticated)
   {
-
 <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
   <div class="row row-cols-4">
 
     @foreach (Picture picture in Model)
-    {
+    {<center style="padding: 10px;">
+
       <div  class="card col mx-4">
         <div  class="card-body">
           <div class="card_title title-white">
@@ -55,7 +55,8 @@
             </div>
           </div>
         </div>
-      </div>
+      </div></center>
+
     }
   </div>
   }
