@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GalleryGramApp.Migrations
 {
-    public partial class initial : Migration
+    public partial class ResetMigrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -85,6 +85,22 @@ namespace GalleryGramApp.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DbOrders", x => x.order_id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Likes",
+                columns: table => new
+                {
+                    like_id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    picture_id = table.Column<int>(type: "int", nullable: false),
+                    user_id = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Likes", x => x.like_id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -237,9 +253,9 @@ namespace GalleryGramApp.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "4018bc08-1bb6-4cec-8550-8adc5bceea93", 0, "53f63ceb-2a5b-41db-86ad-d729ac2078ee", null, false, false, null, null, "ROBERT@GMAIL.COM", "AQAAAAEAACcQAAAAEMgm8EEZvYWXfgs3JJ0E+T+T+n+FlH4qRcWkRN10eYDw4g0IJBe+m72ErDg6OZDSvA==", null, false, "ccc74f08-7826-46aa-9972-265ea8be4ca0", false, "robert@gmail.com" },
-                    { "b75a10e6-b6cd-4732-b8f9-fb7d66a08209", 0, "ac055eb0-0b04-4a20-a997-18c70f37b2b0", null, false, false, null, null, "LUCAS@GMAIL.COM", "AQAAAAEAACcQAAAAEOD+CFC1ifSjMFQJZICDC7xlz2+PutDvrdYIiOwVjWn4aYImGdUkjQasFOC4QvDySA==", null, false, "548a4828-b435-4b0c-8187-d87fb00cb755", false, "lucas@gmail.com" },
-                    { "d45fd3f4-1ee7-4a04-b0fc-265a9acee7e3", 0, "93bf97e4-d0ca-47f8-b901-0bdd8d4e37d0", null, false, false, null, null, "DAVID@GMAIL.COM", "AQAAAAEAACcQAAAAECHR27bDCgWcqOF4MsXZUfbklhiHfXSpEKdBUYSSeHEFXBmUe7FCMZBtjLLS7WTLMw==", null, false, "ab7b9fec-6b1c-4cfe-9482-2d57b64282d0", false, "david@gmail.com" }
+                    { "4947bdd7-f278-4a59-af75-be8bac04c6f5", 0, "5881f98c-5d62-4965-816f-196853fd512d", null, false, false, null, null, "DAVID@GMAIL.COM", "AQAAAAEAACcQAAAAENdGs0NuYQ3hL/w4NHD8vpan672hvJM5MrodVncnAx4wzx8LVbr+exYoy3uPyLcybA==", null, false, "63668cf8-dcd0-4a57-ab44-4cadb6fbb1c3", false, "david@gmail.com" },
+                    { "775b665d-b75a-40c5-9fd4-1c43e4e81fe4", 0, "4564d144-ba8d-463d-b2ee-96e6e81205cf", null, false, false, null, null, "LUCAS@GMAIL.COM", "AQAAAAEAACcQAAAAEL2HuVNq4BRN8RQW8ZS1bCG16olIbVTPZn0RWAe1SUaqv8HN/Msibq100hOU1P/PMg==", null, false, "68fd7897-5504-40d1-9e86-a48efa559ae3", false, "lucas@gmail.com" },
+                    { "ec793050-aa29-47ad-af21-bf87286fa27d", 0, "3a781fd2-bdcd-490f-951c-c39f7cd0cdfb", null, false, false, null, null, "ROBERT@GMAIL.COM", "AQAAAAEAACcQAAAAEPQ/Dm3d9/Qb9QECYs1NKb5u2wHokvw/D2uI92h0BL1qLKNiH5QDmgzzvz1h6PAR5w==", null, false, "06db2b9f-5901-4115-8a30-104e6f0cad64", false, "robert@gmail.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -247,15 +263,15 @@ namespace GalleryGramApp.Migrations
                 columns: new[] { "picture_id", "fileName", "user_id" },
                 values: new object[,]
                 {
-                    { 1, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "d45fd3f4-1ee7-4a04-b0fc-265a9acee7e3" },
-                    { 2, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg", "d45fd3f4-1ee7-4a04-b0fc-265a9acee7e3" },
-                    { 3, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg", "d45fd3f4-1ee7-4a04-b0fc-265a9acee7e3" },
-                    { 4, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "4018bc08-1bb6-4cec-8550-8adc5bceea93" },
-                    { 5, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", "4018bc08-1bb6-4cec-8550-8adc5bceea93" },
-                    { 6, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg", "4018bc08-1bb6-4cec-8550-8adc5bceea93" },
-                    { 7, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg", "b75a10e6-b6cd-4732-b8f9-fb7d66a08209" },
-                    { 8, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "b75a10e6-b6cd-4732-b8f9-fb7d66a08209" },
-                    { 9, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", "b75a10e6-b6cd-4732-b8f9-fb7d66a08209" }
+                    { 1, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "4947bdd7-f278-4a59-af75-be8bac04c6f5" },
+                    { 2, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg", "4947bdd7-f278-4a59-af75-be8bac04c6f5" },
+                    { 3, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg", "4947bdd7-f278-4a59-af75-be8bac04c6f5" },
+                    { 4, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "ec793050-aa29-47ad-af21-bf87286fa27d" },
+                    { 5, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", "ec793050-aa29-47ad-af21-bf87286fa27d" },
+                    { 6, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg", "ec793050-aa29-47ad-af21-bf87286fa27d" },
+                    { 7, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg", "775b665d-b75a-40c5-9fd4-1c43e4e81fe4" },
+                    { 8, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "775b665d-b75a-40c5-9fd4-1c43e4e81fe4" },
+                    { 9, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", "775b665d-b75a-40c5-9fd4-1c43e4e81fe4" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -315,6 +331,9 @@ namespace GalleryGramApp.Migrations
 
             migrationBuilder.DropTable(
                 name: "DbOrders");
+
+            migrationBuilder.DropTable(
+                name: "Likes");
 
             migrationBuilder.DropTable(
                 name: "Pictures");
