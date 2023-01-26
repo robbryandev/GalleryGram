@@ -5,6 +5,8 @@
 <body class="reglog">
 
   <h1>Welcome to your GalleryGram</h1>
+<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
 
   @using GalleryGram.Models
 
@@ -38,7 +40,7 @@
 
     @foreach (Picture picture in ViewBag.pictures)
     {
-      <div class="card col mx-3">
+      <div class="card col mx-3" id="pic-@picture.picture_id">
         <div class="card-body">
           <div class="card_title title-white">
             <div class="container">
@@ -55,7 +57,9 @@
                           <div id="text">
 
                             @* <a href=""><span class="spot" style="margin-bottom: 20%;"></span>Like</a> *@
-                            <p style="margin-top: 5px;" class="spot">Like</p>
+                              <form action="/gallery/delete/@picture.picture_id" method="post" target="dummyframe">
+                                <button type="submit" style="margin-top: 5px;" class="btn spot like-btn" onclick="deletePic(@picture.picture_id)">Delete</button>
+                              </form>
 
                           </div>
                         </svg>
@@ -139,9 +143,14 @@
       </svg>
     </div>
   }
+
+<script>
+  function deletePic(id) {
+    const thisElement = document.getElementById(`pic-${id}`)
+    setTimeout(() => {
+      thisElement.parentElement.removeChild(thisElement);
+    }, 300)
+  }
+</script>
+
 </body>
-
-
-
-
-
