@@ -3,13 +3,19 @@
 }
 
 
-@model GalleryGram.Models.Address
+@using GalleryGram.ViewModels
 <h1>Place a new...</h1>
+
+@model OrderViewModel
+@if(!ViewData.ModelState.IsValid) 
+{
+  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
+}
 
 <body class="reglog">
 <center>
 
-<form id="homep" action="/order/create/@ViewBag.pictureId" method="post">
+<form action="/order/create/@ViewBag.pictureId" method="post">
 <div class="container" >
     <div class="form1" >
       <div class="title"><h1>Order!</h1></div>
