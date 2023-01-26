@@ -38,7 +38,10 @@ This is a Gallery application that utilizes uploading of pictures, liking pictur
 ![Screen Shot 2023-01-26 at 9 55 03 AM](https://user-images.githubusercontent.com/115112679/214913007-cfa82c8f-93bc-4220-8fc6-dc6b05157eb0.png)
 
 ## Setup/Installation Requirements
-* _Clone the repository to your desktop from:https://github.com/robbryandev/GalleryGram.git
+* _Clone the repository to your desktop from:_
+``` 
+https://github.com/robbryandev/GalleryGram.git
+```
 * _Create appsettings.json file in GalleryGramApp folder and paste the following in the file_
 ```
 {
