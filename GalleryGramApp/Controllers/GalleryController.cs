@@ -59,6 +59,22 @@ namespace GalleryGram.Controllers
       }
     }
 
+    [HttpPost("/gallery/delete/{id}")]
+    public void Delete(int id) {
+      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      Picture thisPicture = _db.Pictures
+        .FirstOrDefault(pic => pic.picture_id == id &&
+        pic.user_id == userId);
+      List<Likes> picLikes = _db.Likes
+        .Where(like => like.picture_id == thisPicture.picture_id)
+        .ToList();
+      foreach (Likes like in picLikes) {
+        _db.Likes.Remove(like);
+      }
+      _db.Pictures.Remove(thisPicture);
+      _db.SaveChanges();
+    }
+
     [HttpGet("/gallery/upload")]
     public ActionResult Upload() {
       return View();
