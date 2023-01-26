@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using GalleryGram.Models;
+using GalleryGram.ViewModels;
 using System.Security.Claims;
+using System.Globalization;
 using GalleryGram.ResponseModels;
-
 namespace GalleryGram.Controllers
 {
   public class OrderController : Controller
@@ -26,40 +27,46 @@ namespace GalleryGram.Controllers
     }
 
     [HttpPost("/order/create/{pictureId}")]
-    public async Task<ActionResult> Create(int pictureId, string line1, string line2, string postalOrZipCode, string countryCode, string townOrCity, string stateOrCounty)
+    public async Task<ActionResult> Create(OrderViewModel vModel, int pictureId)
     {
-      string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      // User name is currently the email
-      string userName = HttpContext.User.Identity.Name;
-      string userEmail = userName;
+      if (!ModelState.IsValid)
+      {
+        ViewBag.pictureId = pictureId;
+        return View(vModel);
+      } else {
+          string userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+          // User name is currently the email
+          string userName = HttpContext.User.Identity.Name;
+          string userEmail = userName;
 
-      GalleryGram.Models.Address newAddress = new GalleryGram.Models.Address();
-      newAddress.line1 = line1;
-      newAddress.line2 = line2;
-      newAddress.postalOrZipCode = postalOrZipCode;
-      newAddress.countryCode = countryCode;
-      newAddress.townOrCity = townOrCity;
-      newAddress.stateOrCounty = stateOrCounty;
+          GalleryGram.Models.Address newAddress = new GalleryGram.Models.Address();
+          newAddress.line1 = vModel.line1;
+          newAddress.line2 = vModel.line2;
+          newAddress.postalOrZipCode = vModel.postalOrZipCode;
+          newAddress.countryCode = vModel.countryCode;
+          newAddress.townOrCity = vModel.townOrCity;
+          newAddress.stateOrCounty = vModel.stateOrCounty;
 
-      Picture thisPic = _db.Pictures
-        .FirstOrDefault(entry => entry.picture_id == pictureId);
-      GalleryGram.Models.Asset newAsset = new GalleryGram.Models.Asset() {
-        printArea = "default",
-        url = thisPic.fileName 
-      };
+          Picture thisPic = _db.Pictures
+            .FirstOrDefault(entry => entry.picture_id == pictureId);
+          GalleryGram.Models.Asset newAsset = new GalleryGram.Models.Asset() {
+            printArea = "default",
+            url = thisPic.fileName 
+          };
 
-      OrderResponse response = await OrderRequest.Post(newAddress, newAsset, userName, userEmail);
+          OrderResponse response = await OrderRequest.Post(newAddress, newAsset, userName, userEmail);
 
-      DbOrder newOrder = new DbOrder();
-      newOrder.user_id = userId;
-      newOrder.confirmation_id = response.order.id;
-      newOrder.status = response.order.status.stage;
-      newOrder.cost = "9.99"; //response.order.items[0].recipientCost.amount is null for some reason;
+          DbOrder newOrder = new DbOrder();
+          newOrder.user_id = userId;
+          newOrder.confirmation_id = response.order.id;
+          newOrder.status = response.order.status.stage;
+          newOrder.cost = "9.99"; //response.order.items[0].recipientCost.amount is null for some reason;
 
-      _db.DbOrders.Add(newOrder);
-      _db.SaveChanges();
+          _db.DbOrders.Add(newOrder);
+          _db.SaveChanges();
 
-      return Redirect($"/order/confirm/{newOrder.confirmation_id}"); 
+          return Redirect($"/order/confirm/{newOrder.confirmation_id}"); 
+      }
     }
 
     [HttpGet("/order/confirm/{confirmation_id}")]
