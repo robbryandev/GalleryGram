@@ -1,4 +1,4 @@
-# _Parks Api_
+# _Gallery Gram_
 
 #### By: 
 
@@ -21,9 +21,7 @@
 
 
 ### Description
-```
 This is a Gallery application that utilizes uploading of pictures, liking pictures, and purchasing prints of the pictures that you enjoy. Utilizing a shopping cart API, authentication and authorization, and databases.Each user will create their own profile and gain access to their own profile showing photos that they have uploaded as well as the images that they have 'liked'.
-```
 
 ### EXAMPLE IMAGES:
 
@@ -40,10 +38,7 @@ This is a Gallery application that utilizes uploading of pictures, liking pictur
 ![Screen Shot 2023-01-26 at 9 55 03 AM](https://user-images.githubusercontent.com/115112679/214913007-cfa82c8f-93bc-4220-8fc6-dc6b05157eb0.png)
 
 ## Setup/Installation Requirements
-```
 * _Clone the repository to your desktop from:https://github.com/robbryandev/GalleryGram.git
-```
-```
 * _Create appsettings.json file in GalleryGramApp folder and paste the following in the file_
 ```
 {
@@ -51,9 +46,7 @@ This is a Gallery application that utilizes uploading of pictures, liking pictur
       "DefaultConnection": "Server=localhost;Port=3306;database=[database_name];uid=[USERNAME];pwd=[PASSWORD];"
   }
 }
-
 ```
-
 * _Create EnvironmentVariables.cs file in GalleryGramApp folder and paste the following in the file_
 ```
 namespace GalleryGram.Keys
@@ -64,8 +57,7 @@ namespace GalleryGram.Keys
   }
 }
 ```
-```
-* _run dotnet commands below in _GalleryGram_
+* _run dotnet commands below in _GalleryGramApp_
 ```
 dotnet restore
 ```
@@ -75,16 +67,11 @@ dotnet ef database update
 ```
 dotnet watch run
 ```
- #### Launch the API
-  1) Navigate to GalleryGram/GalleryGramApp directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/GalleryGram/GalleryGram`).
-  2) Run the command `dotnet watch run` 
-
 ------------------------------
 
 ## Known Bugs
-```
 * None known. If you find a bug in our code please leave a message at [mollerstuen.works@gmail.com]
-```
+
 ### Research done using:
 * [CodePen](https://codepen.io/)
 * [FFFuel.io](https://fffuel.co/ffflux/)
