@@ -11,13 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GalleryGramApp.Migrations
 {
     [DbContext(typeof(GalleryGramContext))]
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-    [Migration("20230126194359_ResetMigrations")]
-    partial class ResetMigrations
-========
-    [Migration("20230126160738_initial")]
-    partial class initial
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+    [Migration("20230619223538_fixEnv")]
+    partial class fixEnv
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,79 +87,43 @@ namespace GalleryGramApp.Migrations
                     b.HasData(
                         new
                         {
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            Id = "4947bdd7-f278-4a59-af75-be8bac04c6f5",
+                            Id = "01e0a903-fa39-4476-860e-d9946921c245",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5881f98c-5d62-4965-816f-196853fd512d",
+                            ConcurrencyStamp = "f5efc137-03f2-465e-8e20-557c09aee24d",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "DAVID@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENdGs0NuYQ3hL/w4NHD8vpan672hvJM5MrodVncnAx4wzx8LVbr+exYoy3uPyLcybA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJrz4lKjcPgzy6AibTbOZLu3GMwgfwceaERPO6ozUOsatluljgZ2T3AvWlEEAGGmSQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "63668cf8-dcd0-4a57-ab44-4cadb6fbb1c3",
-========
-                            Id = "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "4c61cfea-bed8-4858-bbc4-7b00190683b6",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "DAVID@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDBbhF7xN4S7yZ8+GJBIjWB3sxdwNmAOiMP07PV8vAtRUcSS3M6li3XavBb7neaAog==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "714237df-b0bc-4476-9bca-189be44094cc",
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            SecurityStamp = "620fb534-9f22-4550-bda0-cf058fa91ad8",
                             TwoFactorEnabled = false,
                             UserName = "david@gmail.com"
                         },
                         new
                         {
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            Id = "ec793050-aa29-47ad-af21-bf87286fa27d",
+                            Id = "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3a781fd2-bdcd-490f-951c-c39f7cd0cdfb",
+                            ConcurrencyStamp = "d863223f-38ca-473f-8862-3abb8a90dae4",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "ROBERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPQ/Dm3d9/Qb9QECYs1NKb5u2wHokvw/D2uI92h0BL1qLKNiH5QDmgzzvz1h6PAR5w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH6bGTKM9Q8e+btJHTqMik1yay+Mk3P42odO+H0Nb3OvIMQxJkHSiLqD7cCC7WQpug==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "06db2b9f-5901-4115-8a30-104e6f0cad64",
-========
-                            Id = "488207d6-11dc-4f2c-9d25-012a1f9932f5",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "305333cd-6b23-4c39-97f8-b0773d70eddb",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "ROBERT@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEInCM9AEExJIORuZCBpicGldcSR1KjPLhudQ8Sqo5f+Cj7pypKn9jErKjq77OUG0FQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "be38895d-1719-4fe7-ba89-a52ca9f9fb67",
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            SecurityStamp = "95457845-8d39-4af2-b3d9-3bc58e3bbfca",
                             TwoFactorEnabled = false,
                             UserName = "robert@gmail.com"
                         },
                         new
                         {
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            Id = "775b665d-b75a-40c5-9fd4-1c43e4e81fe4",
+                            Id = "0253c372-3242-4e1f-80fb-6a7b3a240549",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4564d144-ba8d-463d-b2ee-96e6e81205cf",
+                            ConcurrencyStamp = "a300f81e-2b4b-42cf-91b5-c1cc5fae5611",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedUserName = "LUCAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEL2HuVNq4BRN8RQW8ZS1bCG16olIbVTPZn0RWAe1SUaqv8HN/Msibq100hOU1P/PMg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGGdqyeHt6jgh1SjAwoY7bqtYKXfnH58h6+FAW40fq8EjeHLMIVXVrECrt8/oldU7A==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "68fd7897-5504-40d1-9e86-a48efa559ae3",
-========
-                            Id = "d15d195a-5d77-4f4a-8860-5e89f04b6ee0",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "5ce53002-009a-4283-9a39-5cb8d1c4a0c7",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedUserName = "LUCAS@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFpERX5Hl76AVHlUjXRVwU/Y0RJonOisE7H1u1sdb67TY/1a+dXFXPddnHLyN2uJIA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "d428232c-0b53-4fd7-8d51-f66081d1e9f2",
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            SecurityStamp = "fe1945b3-0eae-40f8-945f-72ba964bbd89",
                             TwoFactorEnabled = false,
                             UserName = "lucas@gmail.com"
                         });
@@ -231,91 +190,55 @@ namespace GalleryGramApp.Migrations
                         {
                             picture_id = 1,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "4947bdd7-f278-4a59-af75-be8bac04c6f5"
-========
-                            user_id = "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "01e0a903-fa39-4476-860e-d9946921c245"
                         },
                         new
                         {
                             picture_id = 2,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "4947bdd7-f278-4a59-af75-be8bac04c6f5"
-========
-                            user_id = "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "01e0a903-fa39-4476-860e-d9946921c245"
                         },
                         new
                         {
                             picture_id = 3,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "4947bdd7-f278-4a59-af75-be8bac04c6f5"
-========
-                            user_id = "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "01e0a903-fa39-4476-860e-d9946921c245"
                         },
                         new
                         {
                             picture_id = 4,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "ec793050-aa29-47ad-af21-bf87286fa27d"
-========
-                            user_id = "488207d6-11dc-4f2c-9d25-012a1f9932f5"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7"
                         },
                         new
                         {
                             picture_id = 5,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "ec793050-aa29-47ad-af21-bf87286fa27d"
-========
-                            user_id = "488207d6-11dc-4f2c-9d25-012a1f9932f5"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7"
                         },
                         new
                         {
                             picture_id = 6,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "ec793050-aa29-47ad-af21-bf87286fa27d"
-========
-                            user_id = "488207d6-11dc-4f2c-9d25-012a1f9932f5"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7"
                         },
                         new
                         {
                             picture_id = 7,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "775b665d-b75a-40c5-9fd4-1c43e4e81fe4"
-========
-                            user_id = "d15d195a-5d77-4f4a-8860-5e89f04b6ee0"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "0253c372-3242-4e1f-80fb-6a7b3a240549"
                         },
                         new
                         {
                             picture_id = 8,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "775b665d-b75a-40c5-9fd4-1c43e4e81fe4"
-========
-                            user_id = "d15d195a-5d77-4f4a-8860-5e89f04b6ee0"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "0253c372-3242-4e1f-80fb-6a7b3a240549"
                         },
                         new
                         {
                             picture_id = 9,
                             fileName = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.Designer.cs
-                            user_id = "775b665d-b75a-40c5-9fd4-1c43e4e81fe4"
-========
-                            user_id = "d15d195a-5d77-4f4a-8860-5e89f04b6ee0"
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.Designer.cs
+                            user_id = "0253c372-3242-4e1f-80fb-6a7b3a240549"
                         });
                 });
 

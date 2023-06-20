@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GalleryGramApp.Migrations
 {
-    public partial class ResetMigrations : Migration
+    public partial class fixEnv : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -253,15 +253,9 @@ namespace GalleryGramApp.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.cs
-                    { "4947bdd7-f278-4a59-af75-be8bac04c6f5", 0, "5881f98c-5d62-4965-816f-196853fd512d", null, false, false, null, null, "DAVID@GMAIL.COM", "AQAAAAEAACcQAAAAENdGs0NuYQ3hL/w4NHD8vpan672hvJM5MrodVncnAx4wzx8LVbr+exYoy3uPyLcybA==", null, false, "63668cf8-dcd0-4a57-ab44-4cadb6fbb1c3", false, "david@gmail.com" },
-                    { "775b665d-b75a-40c5-9fd4-1c43e4e81fe4", 0, "4564d144-ba8d-463d-b2ee-96e6e81205cf", null, false, false, null, null, "LUCAS@GMAIL.COM", "AQAAAAEAACcQAAAAEL2HuVNq4BRN8RQW8ZS1bCG16olIbVTPZn0RWAe1SUaqv8HN/Msibq100hOU1P/PMg==", null, false, "68fd7897-5504-40d1-9e86-a48efa559ae3", false, "lucas@gmail.com" },
-                    { "ec793050-aa29-47ad-af21-bf87286fa27d", 0, "3a781fd2-bdcd-490f-951c-c39f7cd0cdfb", null, false, false, null, null, "ROBERT@GMAIL.COM", "AQAAAAEAACcQAAAAEPQ/Dm3d9/Qb9QECYs1NKb5u2wHokvw/D2uI92h0BL1qLKNiH5QDmgzzvz1h6PAR5w==", null, false, "06db2b9f-5901-4115-8a30-104e6f0cad64", false, "robert@gmail.com" }
-========
-                    { "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8", 0, "4c61cfea-bed8-4858-bbc4-7b00190683b6", null, false, false, null, null, "DAVID@GMAIL.COM", "AQAAAAEAACcQAAAAEDBbhF7xN4S7yZ8+GJBIjWB3sxdwNmAOiMP07PV8vAtRUcSS3M6li3XavBb7neaAog==", null, false, "714237df-b0bc-4476-9bca-189be44094cc", false, "david@gmail.com" },
-                    { "488207d6-11dc-4f2c-9d25-012a1f9932f5", 0, "305333cd-6b23-4c39-97f8-b0773d70eddb", null, false, false, null, null, "ROBERT@GMAIL.COM", "AQAAAAEAACcQAAAAEInCM9AEExJIORuZCBpicGldcSR1KjPLhudQ8Sqo5f+Cj7pypKn9jErKjq77OUG0FQ==", null, false, "be38895d-1719-4fe7-ba89-a52ca9f9fb67", false, "robert@gmail.com" },
-                    { "d15d195a-5d77-4f4a-8860-5e89f04b6ee0", 0, "5ce53002-009a-4283-9a39-5cb8d1c4a0c7", null, false, false, null, null, "LUCAS@GMAIL.COM", "AQAAAAEAACcQAAAAEFpERX5Hl76AVHlUjXRVwU/Y0RJonOisE7H1u1sdb67TY/1a+dXFXPddnHLyN2uJIA==", null, false, "d428232c-0b53-4fd7-8d51-f66081d1e9f2", false, "lucas@gmail.com" }
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.cs
+                    { "01e0a903-fa39-4476-860e-d9946921c245", 0, "f5efc137-03f2-465e-8e20-557c09aee24d", null, false, false, null, null, "DAVID@GMAIL.COM", "AQAAAAEAACcQAAAAEJrz4lKjcPgzy6AibTbOZLu3GMwgfwceaERPO6ozUOsatluljgZ2T3AvWlEEAGGmSQ==", null, false, "620fb534-9f22-4550-bda0-cf058fa91ad8", false, "david@gmail.com" },
+                    { "0253c372-3242-4e1f-80fb-6a7b3a240549", 0, "a300f81e-2b4b-42cf-91b5-c1cc5fae5611", null, false, false, null, null, "LUCAS@GMAIL.COM", "AQAAAAEAACcQAAAAEGGdqyeHt6jgh1SjAwoY7bqtYKXfnH58h6+FAW40fq8EjeHLMIVXVrECrt8/oldU7A==", null, false, "fe1945b3-0eae-40f8-945f-72ba964bbd89", false, "lucas@gmail.com" },
+                    { "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7", 0, "d863223f-38ca-473f-8862-3abb8a90dae4", null, false, false, null, null, "ROBERT@GMAIL.COM", "AQAAAAEAACcQAAAAEH6bGTKM9Q8e+btJHTqMik1yay+Mk3P42odO+H0Nb3OvIMQxJkHSiLqD7cCC7WQpug==", null, false, "95457845-8d39-4af2-b3d9-3bc58e3bbfca", false, "robert@gmail.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -269,27 +263,15 @@ namespace GalleryGramApp.Migrations
                 columns: new[] { "picture_id", "fileName", "user_id" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:GalleryGramApp/Migrations/20230126194359_ResetMigrations.cs
-                    { 1, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "4947bdd7-f278-4a59-af75-be8bac04c6f5" },
-                    { 2, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg", "4947bdd7-f278-4a59-af75-be8bac04c6f5" },
-                    { 3, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg", "4947bdd7-f278-4a59-af75-be8bac04c6f5" },
-                    { 4, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "ec793050-aa29-47ad-af21-bf87286fa27d" },
-                    { 5, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", "ec793050-aa29-47ad-af21-bf87286fa27d" },
-                    { 6, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg", "ec793050-aa29-47ad-af21-bf87286fa27d" },
-                    { 7, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg", "775b665d-b75a-40c5-9fd4-1c43e4e81fe4" },
-                    { 8, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "775b665d-b75a-40c5-9fd4-1c43e4e81fe4" },
-                    { 9, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", "775b665d-b75a-40c5-9fd4-1c43e4e81fe4" }
-========
-                    { 1, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8" },
-                    { 2, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg", "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8" },
-                    { 3, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg", "2ccf0c85-7e64-49c5-8a7c-75ba8505bfc8" },
-                    { 4, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "488207d6-11dc-4f2c-9d25-012a1f9932f5" },
-                    { 5, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", "488207d6-11dc-4f2c-9d25-012a1f9932f5" },
-                    { 6, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg", "488207d6-11dc-4f2c-9d25-012a1f9932f5" },
-                    { 7, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg", "d15d195a-5d77-4f4a-8860-5e89f04b6ee0" },
-                    { 8, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "d15d195a-5d77-4f4a-8860-5e89f04b6ee0" },
-                    { 9, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", "d15d195a-5d77-4f4a-8860-5e89f04b6ee0" }
->>>>>>>> main:GalleryGramApp/Migrations/20230126160738_initial.cs
+                    { 1, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "01e0a903-fa39-4476-860e-d9946921c245" },
+                    { 2, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg", "01e0a903-fa39-4476-860e-d9946921c245" },
+                    { 3, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/msdos/msdos-original.svg", "01e0a903-fa39-4476-860e-d9946921c245" },
+                    { 4, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg", "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7" },
+                    { 5, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg", "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7" },
+                    { 6, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg", "9b93e2a2-2bf4-4538-8d3a-8f0980b77bd7" },
+                    { 7, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg", "0253c372-3242-4e1f-80fb-6a7b3a240549" },
+                    { 8, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", "0253c372-3242-4e1f-80fb-6a7b3a240549" },
+                    { 9, "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", "0253c372-3242-4e1f-80fb-6a7b3a240549" }
                 });
 
             migrationBuilder.CreateIndex(
