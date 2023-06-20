@@ -1,6 +1,7 @@
 **/bin/
 **/obj/
 **/appsettings.json
-**/wwwroot/pictures/*.png
+**/wwwroot/pictures/*
+!**/wwwroot/pictures/.gitkeep
 .env
 .history
