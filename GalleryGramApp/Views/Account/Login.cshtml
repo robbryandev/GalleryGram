@@ -6,19 +6,19 @@
 
 @model LoginViewModel
 <body class="reglog">
-  
-@* 
+
+  @* 
 <h1>Login to your account</h1>
 <hr />
 <hr> *@
 
-@if(!ViewData.ModelState.IsValid) 
-{
-  @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
-}
-@*  *@
+  @if (!ViewData.ModelState.IsValid)
+  {
+    @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:") 
+  }
+  @*  *@
 <center>
-@* @using (Html.BeginForm("Register", "Account", FormMethod.Post)) *@
+    @* @using (Html.BeginForm("Register", "Account", FormMethod.Post)) *@
 <form action="/account/login" method="post">
 <div class="container" >
     <div class="form" >
@@ -26,15 +26,13 @@
       <div class="subtitle">Login to view account</div>
       <div class="input-container ic1">
         <input name="Email" id="Email" class="input" type="text" placeholder=" " />
-        <div class="cut"></div>
         <label for="Email" class="placeholder">Email</label>
       </div>
       <div class="input-container ic2">
         <input name="Password" id="Password" class="input" type="password" placeholder=" " />
-        <div class="cut"></div>
         <label for="Password" class="placeholder">Password </label>
       </div>
-    
+
       <button type="text" class="submit">submit</button>
     </div>
 </div>
@@ -47,7 +45,7 @@
   <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
     <rect id="shape" height="40" width="150" />
     <div id="text">
-      @* <a href=""><span class="spot"></span>Button 1</a> *@
+        @* <a href=""><span class="spot"></span>Button 1</a> *@
       <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Register", "Register")
 
       </p>
@@ -59,7 +57,7 @@
   <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
     <rect id="shape" height="40" width="150" />
     <div id="text">
-      @* <a href=""><span class="spot"></span>Button 1</a> *@
+        @* <a href=""><span class="spot"></span>Button 1</a> *@
       <p style="margin-top: 5px;" class="spot">@Html.ActionLink("Back to accounts", "Index")
 
       </p>
@@ -73,7 +71,7 @@
 
 
 
-@* 
+  @* 
 @using (Html.BeginForm())
 {
   @Html.LabelFor(m => m.Email) <br>
@@ -95,7 +93,7 @@
   </svg>
 </div> *@
 
- 
+
 
 
 
